@@ -49,4 +49,15 @@ public class BinarySearchTest {
         assertTrue(searchResult.isFound());
         assertEquals(seq.length - 1, searchResult.getPosition());
     }
+
+    @Test
+    public void searchFindsCenterElementWhenLengthOver1() {
+        int[] seq = { 0, 1, 2, 4, 9 };
+        int key = 2;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(seq.length / 2, searchResult.getPosition());
+    }
 }
