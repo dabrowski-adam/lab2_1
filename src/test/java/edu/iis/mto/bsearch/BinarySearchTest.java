@@ -38,4 +38,15 @@ public class BinarySearchTest {
         assertTrue(searchResult.isFound());
         assertEquals(0, searchResult.getPosition());
     }
+
+    @Test
+    public void searchFindsLastElementWhenLengthOver1() {
+        int[] seq = { 0, 1, 2, 4 };
+        int key = 4;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(seq.length - 1, searchResult.getPosition());
+    }
 }
