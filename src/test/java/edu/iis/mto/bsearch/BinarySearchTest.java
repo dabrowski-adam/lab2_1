@@ -71,4 +71,12 @@ public class BinarySearchTest {
         assertFalse(searchResult.isFound());
         assertEquals(-1, searchResult.getPosition());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void searchFailsWhenListEmpty() {
+        int[] seq = { };
+        int key = 100;
+
+        BinarySearch.search(key, seq);
+    }
 }
