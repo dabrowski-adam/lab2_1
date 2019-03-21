@@ -60,4 +60,15 @@ public class BinarySearchTest {
         assertTrue(searchResult.isFound());
         assertEquals(seq.length / 2, searchResult.getPosition());
     }
+
+    @Test
+    public void searchFailsWhenLengthOver1() {
+        int[] seq = { 0, 1, 2, 4, 9 };
+        int key = 100;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertFalse(searchResult.isFound());
+        assertEquals(-1, searchResult.getPosition());
+    }
 }
