@@ -27,4 +27,15 @@ public class BinarySearchTest {
         assertFalse(searchResult.isFound());
         assertEquals(-1, searchResult.getPosition());
     }
+
+    @Test
+    public void searchFindsFirstElementWhenLengthOver1() {
+        int[] seq = { 0, 1, 2, 3 };
+        int key = 0;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(0, searchResult.getPosition());
+    }
 }
