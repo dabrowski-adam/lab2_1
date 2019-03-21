@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class BinarySearchTest {
 
     @Test
-    public void searchSucceedsInLength1() {
+    public void searchSucceedsWhenLength1() {
         int[] seq = { 0 };
         int key = 0;
 
@@ -18,7 +18,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void searchFailsInLength1() {
+    public void searchFailsWhenLength1() {
         int[] seq = { 0 };
         int key = 1;
 
