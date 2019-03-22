@@ -3,6 +3,7 @@ package edu.iis.mto.bsearch;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertThat;
 
 public class BinarySearchTest {
@@ -79,5 +80,16 @@ public class BinarySearchTest {
         int key = 100;
 
         BinarySearch.search(key, seq);
+    }
+
+    @Test
+    public void searchDoesNotModifyInput() {
+        int[] seq = { 0, 1, 2, 4, 9 };
+        int[] seqClone = seq.clone();
+        int key = 2;
+
+        BinarySearch.search(key, seq);
+
+        assertArrayEquals(seqClone, seq);
     }
 }
