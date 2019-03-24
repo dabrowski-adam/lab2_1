@@ -64,6 +64,28 @@ public class BinarySearchTest {
     }
 
     @Test
+    public void searchFindsCenterRightElementWhenLengthOver1() {
+        int[] seq = { 0, 1, 2, 4 };
+        int key = 2;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(seq.length / 2));
+    }
+
+    @Test
+    public void searchFindsCenterLeftElementWhenLengthOver1() {
+        int[] seq = { 0, 1, 2, 4 };
+        int key = 1;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(seq.length / 2 - 1));
+    }
+
+    @Test
     public void searchFailsWhenLengthOver1() {
         int[] seq = { 0, 1, 2, 4, 9 };
         int key = 100;
