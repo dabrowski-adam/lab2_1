@@ -22,7 +22,7 @@ public class BinarySearch {
      *         sekwencji, jezeli nie znaleziony -1)
      */
     public static SearchResult search(int key, int[] seq) {
-        if (seq.length == 0) {
+        if (seq == null || seq.length == 0) {
             throw new IllegalArgumentException();
         }
 
