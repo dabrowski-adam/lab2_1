@@ -104,6 +104,14 @@ public class BinarySearchTest {
         BinarySearch.search(key, seq);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void searchFailsWhenListIsNull() {
+        int[] seq = null;
+        int key = 100;
+
+        BinarySearch.search(key, seq);
+    }
+
     @Test
     public void searchDoesNotModifyInput() {
         int[] seq = { 0, 1, 2, 4, 9 };
