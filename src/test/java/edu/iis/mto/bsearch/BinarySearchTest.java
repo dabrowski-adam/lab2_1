@@ -122,4 +122,22 @@ public class BinarySearchTest {
 
         assertArrayEquals(seqClone, seq);
     }
+
+    @Test
+    public void searchForLargeElementOnlyChecksToTheRight() {
+        int[] seq = { 9, 9, 0, 1, 2 };
+        int key = 9;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertThat(searchResult.isFound(), is(false));
+    }
+
+    @Test
+    public void searchForSmallElementOnlyChecksToTheLeft() {
+        int[] seq = { 1, 2, 3, 0, 0 };
+        int key = 0;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertThat(searchResult.isFound(), is(false));
+    }
 }
